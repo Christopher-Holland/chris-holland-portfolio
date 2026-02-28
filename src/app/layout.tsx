@@ -4,8 +4,8 @@ import { Header } from "./components/layout/Header";
 import { Footer } from "./components/layout/Footer";
 
 export const metadata: Metadata = {
-  title: "Next.js Freelance Template",
-  description: "A reusable Next.js template for portfolio and client sites.",
+  title: "Chris Holland | Software Engineer",
+  description: "Software engineer building fast, reliable web apps and dashboards.",
 };
 
 export default function RootLayout({
