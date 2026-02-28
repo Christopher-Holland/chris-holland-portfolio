@@ -78,17 +78,17 @@ export default function HomePage() {
           {/* Project 3 */}
           <Card>
             {/* TODO: Add a consistent project thumbnail (16:9) */}
-            <h3 className="text-lg font-semibold">Next.js Portfolio Template</h3>
+            <h3 className="text-lg font-semibold">Reusable Web Portfolio System</h3>
             <p className="mt-2 text-sm text-foreground-muted">
-              A reusable portfolio/marketing template built for speed and
-              customization—clean sections, consistent components, and a
-              professional default look.
+              A reusable foundation I use to deliver clean, professional portfolio
+              and marketing sites quickly—without sacrificing structure, clarity,
+              or maintainability.
             </p>
 
             <ul className="mt-4 space-y-2 text-sm text-foreground-muted">
-              <li>• Modular sections (Hero, Work, About, Contact)</li>
-              <li>• Simple theming via CSS variables + utility classes</li>
-              <li>• Built for fast reuse across future client projects</li>
+              <li>• Pre-built sections for common business needs</li>
+              <li>• Consistent design system and component structure</li>
+              <li>• Optimized for fast iteration and client customization</li>
             </ul>
 
             <p className="mt-4 text-xs text-muted">
@@ -128,6 +128,9 @@ export default function HomePage() {
           If you’d like to work together, send a brief overview of what you’re
           building and what “success” looks like. I’ll reply with next steps and
           a few questions to confirm scope.
+        </p>
+        <p className="mt-1 text-sm text-muted">
+          Based in the U.S. (Eastern Time Zone)
         </p>
 
         <div className="mt-6 grid gap-4 lg:grid-cols-2 lg:items-start">
