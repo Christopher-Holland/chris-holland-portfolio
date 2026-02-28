@@ -39,6 +39,24 @@ export function Button({
 }: Props) {
     const classes = `${baseClasses()} ${variantClasses(variant)} ${className}`;
 
+    const isExternal =
+        href?.startsWith("http") ||
+        href?.startsWith("mailto:") ||
+        href?.startsWith("tel:");
+
+    if (href && isExternal) {
+        return (
+            <a
+                href={href}
+                className={classes}
+                target={href.startsWith("http") ? "_blank" : undefined}
+                rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+            >
+                {children}
+            </a>
+        );
+    }
+
     if (href) {
         return (
             <Link href={href} className={classes}>

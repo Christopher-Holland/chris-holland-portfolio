@@ -31,10 +31,10 @@ export default function HomePage() {
             </p>
 
             <div className="mt-4 flex gap-3">
-              <Button href="#" variant="secondary">
+              <Button href="https://github.com/Christopher-Holland/DeckHaven.git" variant="secondary">
                 Repo
               </Button>
-              <Button href="#" variant="secondary">
+              <Button href="https://deck-haven.vercel.app/" variant="secondary">
                 Live
               </Button>
             </div>
@@ -76,7 +76,7 @@ export default function HomePage() {
             </p>
 
             <div className="mt-4 flex gap-3">
-              <Button href="#" variant="secondary">
+              <Button href="https://github.com/Christopher-Holland/chris-holland-portfolio.git" variant="secondary">
                 Repo
               </Button>
             </div>
@@ -105,9 +105,18 @@ export default function HomePage() {
         </p>
 
         <div className="mt-4">
-          <Button href="mailto:youremail@example.com" variant="primary">
+          <Button href="mailto:chrisholland.dev@gmail.com" variant="primary">
             Email me
           </Button>
+          <p className="mt-3 text-sm text-foreground-muted">
+            Prefer email?{" "}
+            <a
+              href="mailto:chrisholland.dev@gmail.com"
+              className="text-foreground underline underline-offset-4 hover:opacity-80"
+            >
+              chrisholland.dev@gmail.com
+            </a>
+          </p>
         </div>
       </Section>
     </>
