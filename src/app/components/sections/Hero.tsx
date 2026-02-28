@@ -20,46 +20,44 @@ export function Hero() {
 
                     <p className="mt-4 max-w-prose text-base text-foreground-muted">
                         {isPortfolio
-                            ? "I build modern web apps with strong UX, clean code, and a focus on shipping."
-                            : "I help businesses launch modern websites and web apps that convert and scale."}
+                            ? "I design and build production-ready web applications with clean UX, strong engineering, and a focus on measurable outcomes."
+                            : "I help businesses launch modern websites and web apps that convert, scale, and stay maintainable."}
                     </p>
 
                     <div className="mt-6 flex flex-wrap gap-3">
-                        <Button href={site.cta.href} variant="primary">
-                            {isPortfolio ? "See my work" : "Get a quote"}
+                        <Button href="/#contact" variant="primary">
+                            Contact
                         </Button>
                         <Button href="/#projects" variant="secondary">
-                            {isPortfolio ? "Featured projects" : "Case studies"}
+                            View work
                         </Button>
                     </div>
 
                     <div className="mt-8 flex gap-8 text-sm text-muted">
                         <div>
-                            <div className="font-semibold text-foreground">Fast</div>
-                            <div>Ship clean MVPs</div>
+                            <div className="font-semibold text-foreground">Fast delivery</div>
+                            <div>Ship MVPs & iterations</div>
                         </div>
                         <div>
-                            <div className="font-semibold text-foreground">Reliable</div>
-                            <div>Maintainable builds</div>
+                            <div className="font-semibold text-foreground">Built to last</div>
+                            <div>Clean, maintainable code</div>
                         </div>
                         <div>
-                            <div className="font-semibold text-foreground">Modern</div>
-                            <div>Next.js + Tailwind</div>
+                            <div className="font-semibold text-foreground">Modern stack</div>
+                            <div>Next.js + TypeScript</div>
                         </div>
                     </div>
                 </div>
 
                 <Card className="lg:ml-auto">
                     <div className="space-y-4">
-                        <div className="text-sm font-medium text-muted">
-                            Quick snapshot
-                        </div>
+                        <div className="text-sm font-medium text-muted">Engagement</div>
 
                         <div className="grid gap-3 sm:grid-cols-2">
                             <div className="rounded-xl bg-surface p-4 transition-colors hover:bg-surface-hover">
-                                <div className="text-xs text-muted">Focus</div>
+                                <div className="text-xs text-muted">Typical projects</div>
                                 <div className="mt-1 font-medium">
-                                    {isPortfolio ? "Web apps + UX" : "Websites + funnels"}
+                                    {isPortfolio ? "Dashboards & web apps" : "Websites & funnels"}
                                 </div>
                             </div>
 
@@ -69,19 +67,22 @@ export function Hero() {
                             </div>
 
                             <div className="rounded-xl bg-surface p-4 transition-colors hover:bg-surface-hover">
-                                <div className="text-xs text-muted">Speed</div>
-                                <div className="mt-1 font-medium">Launch-ready</div>
+                                <div className="text-xs text-muted">Workflow</div>
+                                <div className="mt-1 font-medium">Scope → build → launch</div>
                             </div>
 
                             <div className="rounded-xl bg-surface p-4 transition-colors hover:bg-surface-hover">
                                 <div className="text-xs text-muted">Support</div>
-                                <div className="mt-1 font-medium">Iterate & improve</div>
+                                <div className="mt-1 font-medium">Ongoing improvements</div>
                             </div>
                         </div>
 
                         <div className="rounded-xl border border-border p-4 text-sm text-foreground-muted">
-                            Replace this card with: testimonials, a project highlight, a
-                            booking widget, or an email capture.
+                            <div className="font-medium text-foreground">Availability</div>
+                            <div className="mt-1">
+                                Open to new projects and recurring support. Reach out with a brief
+                                overview, timeline, and any links or references.
+                            </div>
                         </div>
                     </div>
                 </Card>
