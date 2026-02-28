@@ -10,9 +10,6 @@ export function Hero() {
         <Section className="py-20 sm:py-24">
             <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
                 <div>
-                    <p className="text-sm font-medium text-muted">
-                        {isPortfolio ? "Portfolio" : "Services"}
-                    </p>
 
                     <h1 className="mt-3 text-4xl font-semibold tracking-tight sm:text-5xl">
                         {site.brand.tagline}
