@@ -50,30 +50,7 @@ export default function HomePage() {
           </Card>
 
           {/* Project 2 */}
-          <Card>
-            {/* TODO: Add a consistent project thumbnail (16:9) */}
-            <h3 className="text-lg font-semibold">My Ledger</h3>
-            <p className="mt-2 text-sm text-foreground-muted">
-              A personal finance app built to track transactions, categories, and
-              budgets with clarity—designed to stay maintainable as features grow.
-            </p>
-
-            <ul className="mt-4 space-y-2 text-sm text-foreground-muted">
-              <li>• Transaction and category modeling with scalable structure</li>
-              <li>• Clean UI flows for day-to-day tracking and review</li>
-              <li>• Built with a practical foundation for future insights/automation</li>
-            </ul>
-
-            <p className="mt-4 text-xs text-muted">
-              React • Node.js • MongoDB • Express
-            </p>
-
-            <div className="mt-4 flex gap-3">
-              <Button href="#" variant="secondary">
-                Repo
-              </Button>
-            </div>
-          </Card>
+          
 
           {/* Project 3 */}
           <Card>
