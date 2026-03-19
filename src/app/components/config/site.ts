@@ -5,7 +5,7 @@ export const site = {
 
     brand: {
         name: "Chris Holland",
-        tagline: "Full-Stack Software Engineer building modern web applications with React, Next.js, Node.js, and scalable backend systems.",
+        tagline: "Software engineer building fast, reliable web apps and dashboards.",
     },
 
     nav: [
