@@ -1,9 +1,74 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import { Hero } from "./components/sections/Hero";
 import { Section } from "./components/ui/Section";
 import { Card } from "./components/ui/Card";
 import { Button } from "./components/ui/Button";
 
+type ProjectGalleryProps = {
+  images: string[];
+  altPrefix: string;
+  onImageClick: (src: string, alt: string) => void;
+};
+
+function ProjectGallery({
+  images,
+  altPrefix,
+  onImageClick,
+}: ProjectGalleryProps) {
+  return (
+    <div className="mb-5 min-h-0">
+      <div className="relative">
+        <div className="flex gap-3 overflow-x-auto pb-2 snap-x snap-mandatory">
+          {images.map((src, index) => {
+            const alt = `${altPrefix} ${index + 1}`;
+
+            return (
+              <img
+                key={`${altPrefix}-${index}`}
+                src={src}
+                alt={alt}
+                onClick={() => onImageClick(src, alt)}
+                className="h-48 w-auto shrink-0 snap-start rounded-xl border border-border object-cover transition-transform hover:scale-[1.01] cursor-zoom-in"
+              />
+            );
+          })}
+        </div>
+
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-card to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-card to-transparent" />
+      </div>
+
+      <p className="mt-2 text-xs text-muted">Scroll to view more screenshots</p>
+    </div>
+  );
+}
+
+type ActiveImage = {
+  src: string;
+  alt: string;
+} | null;
+
 export default function HomePage() {
+  const [activeImage, setActiveImage] = useState<ActiveImage>(null);
+
+  useEffect(() => {
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setActiveImage(null);
+      }
+    }
+
+    if (activeImage) {
+      window.addEventListener("keydown", handleKeyDown);
+    }
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [activeImage]);
+
   return (
     <>
       <Hero />
@@ -16,10 +81,23 @@ export default function HomePage() {
           architecture, and production-ready execution.
         </p>
 
-        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 grid gap-6 sm:grid-cols-1 lg:grid-cols-2">
           {/* Project 1 */}
           <Card>
-            {/* TODO: Add a consistent project thumbnail (16:9) */}
+            <ProjectGallery
+              images={[
+                "/DeckHaven_Screenshots/dashboard.png",
+                "/DeckHaven_Screenshots/collection_page.png",
+                "/DeckHaven_Screenshots/deckbuilder.png",
+                "/DeckHaven_Screenshots/binder_view.png",
+                "/DeckHaven_Screenshots/sets-page.png",
+                "/DeckHaven_Screenshots/sets-filters.png",
+                "/DeckHaven_Screenshots/collection-drawer.png",
+              ]}
+              altPrefix="DeckHaven screenshot"
+              onImageClick={(src, alt) => setActiveImage({ src, alt })}
+            />
+
             <h3 className="text-lg font-semibold">DeckHaven</h3>
             <p className="mt-2 text-sm text-foreground-muted">
               A trading card collection and deck-building web app focused on fast
@@ -50,31 +128,41 @@ export default function HomePage() {
           </Card>
 
           {/* Project 2 */}
-          
-
-          {/* Project 3 */}
           <Card>
-            {/* TODO: Add a consistent project thumbnail (16:9) */}
-            <h3 className="text-lg font-semibold">Reusable Web Portfolio System</h3>
+            <ProjectGallery
+              images={[
+                "/ClientOps_Screenshots/dashboard.png",
+                "/ClientOps_Screenshots/clients.png",
+                "/ClientOps_Screenshots/projects.png",
+                "/ClientOps_Screenshots/add_new_client.png",
+                "/ClientOps_Screenshots/add_new_project.png",
+                "/ClientOps_Screenshots/billing.png",
+                "/ClientOps_Screenshots/revenue.png",
+                "/ClientOps_Screenshots/revenue_2.png",
+              ]}
+              altPrefix="ClientOps screenshot"
+              onImageClick={(src, alt) => setActiveImage({ src, alt })}
+            />
+
+            <h3 className="text-lg font-semibold">ClientOps</h3>
             <p className="mt-2 text-sm text-foreground-muted">
-              A reusable foundation I use to deliver clean, professional portfolio
-              and marketing sites quickly—without sacrificing structure, clarity,
-              or maintainability.
+              A lightweight freelance operations dashboard for managing clients,
+              projects, billing, and revenue in one clean workspace.
             </p>
 
             <ul className="mt-4 space-y-2 text-sm text-foreground-muted">
-              <li>• Pre-built sections for common business needs</li>
-              <li>• Consistent design system and component structure</li>
-              <li>• Optimized for fast iteration and client customization</li>
+              <li>• Client relationship tracking with status, notes, and next actions</li>
+              <li>• Project and billing workflows with revenue visibility</li>
+              <li>• Built as a practical internal tool with a clean SaaS-style interface</li>
             </ul>
 
             <p className="mt-4 text-xs text-muted">
-              Next.js • TypeScript • Tailwind
+              Next.js • TypeScript • Tailwind • Prisma • PostgreSQL
             </p>
 
             <div className="mt-4 flex gap-3">
               <Button
-                href="https://github.com/Christopher-Holland/chris-holland-portfolio"
+                href="https://github.com/Christopher-Holland"
                 variant="secondary"
               >
                 Repo
@@ -133,7 +221,6 @@ export default function HomePage() {
               </p>
 
               <p className="mt-2 text-xs text-muted">
-                {/* TODO: Replace with a contact form (Formspree / Basin / Tally) */}
                 Typical response time: within 1–2 business days.
               </p>
             </div>
@@ -151,12 +238,47 @@ export default function HomePage() {
             <p className="mt-4 text-sm text-foreground-muted">
               Prefer LinkedIn? Use the icon in the header, or click the link below.
             </p>
-            <a href="https://linkedin.com/in/christopher-holland-535312344" target="_blank" rel="noopener noreferrer" className="text-foreground underline underline-offset-4 hover:opacity-80">
+            <a
+              href="https://linkedin.com/in/christopher-holland-535312344"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-foreground underline underline-offset-4 hover:opacity-80"
+            >
               LinkedIn
             </a>
           </div>
         </div>
       </Section>
+
+      {activeImage && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
+          onClick={() => setActiveImage(null)}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Expanded project screenshot"
+        >
+          <div
+            className="relative max-h-[90vh] max-w-[90vw]"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <button
+              type="button"
+              onClick={() => setActiveImage(null)}
+              className="absolute -right-2 -top-2 rounded-full border border-border bg-card px-3 py-1 text-sm font-medium text-foreground shadow-lg hover:opacity-90"
+              aria-label="Close image preview"
+            >
+              ✕
+            </button>
+
+            <img
+              src={activeImage.src}
+              alt={activeImage.alt}
+              className="max-h-[90vh] max-w-[90vw] rounded-xl border border-border bg-card object-contain shadow-2xl"
+            />
+          </div>
+        </div>
+      )}
     </>
   );
 }
