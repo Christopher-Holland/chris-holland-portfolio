@@ -162,10 +162,13 @@ export default function HomePage() {
 
             <div className="mt-4 flex gap-3">
               <Button
-                href="https://github.com/Christopher-Holland"
+                href="https://github.com/Christopher-Holland/ClientOps.git"
                 variant="secondary"
               >
                 Repo
+              </Button>
+              <Button href="https://client-ops-ch.vercel.app/" variant="secondary">
+                Live
               </Button>
             </div>
           </Card>
