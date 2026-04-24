@@ -242,7 +242,7 @@ export default function HomePage() {
               Prefer LinkedIn? Use the icon in the header, or click the link below.
             </p>
             <a
-              href="https://linkedin.com/in/christopher-holland-535312344"
+              href="https://linkedin.com/in/cmholland"
               target="_blank"
               rel="noopener noreferrer"
               className="text-foreground underline underline-offset-4 hover:opacity-80"

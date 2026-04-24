@@ -37,7 +37,7 @@ export function Header() {
                     </Link>
 
                     <Link
-                        href="https://linkedin.com/in/christopher-holland-535312344"
+                        href="https://linkedin.com/in/cmholland"
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="LinkedIn"
